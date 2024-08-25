@@ -7,6 +7,8 @@ Skráðu þig á viðburði hjá okkur!
 ### Viðburður
 
 - Hvaða viðburð viltu koma á? [val um viðburð]
+- Hvenær? [dagsetning]
+- Klukkan hvað? [val um klukkustundir frá 10:00 til 00:00, t.d 10:00–11:00]
 - Hve mörg? [val um 1–10]
 - Viltu taka eitthvað fram? [val um að skrifa inn texta]
 

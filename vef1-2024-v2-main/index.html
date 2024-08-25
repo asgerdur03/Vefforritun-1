@@ -2,40 +2,87 @@
 <html lang="is">
     <head>
         <meta charset="UTF-8">
-        <title>Verkefni 2</title>
+        <title>Verkefni 2 - Forsíða</title>
     </head>
 
     <body>
+
+        <nav>
+            <h1>Valmynd</h1>
+            <ul>
+                <li><a href="index.html">Forsíða Spilabúðarinnar</a></li>
+                <li><a href="sidur/spil.html">Spil</a></li>
+                <li><a href="sidur/vidburdir.html">Viðburðir</a></li>
+                <li><a href="sidur/form.html">Skráning á viðburði</a></li>
+            </ul>
+        </nav>
+
+<!-- ÞAÐ SEM VANTAR Á SÍÐUR
+- Allar síður skulu hafa fyrisögn og „beint í efni“ hlekk á eftir fyrirsögn, 
+en á undan valmynd. Hlekkur sem leyfir þeim sem nota skjálesara að sleppa við að 
+hlusta á valmynd.
+
+-Allar síður skulu hafa lýsigögn skilgreind fyrir `description`, `og:title`,
+`og:description` og `og:image` (alltaf `myndir/sharing.jpg`). 
+Prófið með [Facebook Debugger](https://developers.facebook.com/tools/debug/) 
+eða [OpenGraph Social Previewer](https://www.opengraph.xyz/) til að sjá hvort 
+gögn séu rétt eftir að síða er sett upp á Netlify.
+-->
+
+
+
         <h1> Spilabúðin </h1>
         <p>Spilabúðin selur spil, 
-        heldur viðburði og 
-        býður upp á skemmtilega stund. 
-        Kíktu á okkur á Spilagötu 1.</p>
+            heldur viðburði og 
+            býður upp á skemmtilega stund. 
+            Kíktu á okkur á Spilagötu 1.
+        </p>
 
         <img src="myndir/spilabudin.jpg" alt="Spilabúðin" width="300" height="200">
     
         <h2>Spil</h2>
-        <p>Við seljum allskonar spil fyrir allskonar fólk. </p>
-        <a href="sidur/spil.html">Skoðaðu spila úrvalið</a>
+        <p>Við seljum allskonar spil fyrir allskonar fólk. <a href="sidur/spil.html">Skoðaðu spila úrvalið</a></p>
 
         <h2>Viðburðir</h2>
-        <p>Við höldum reglulega viðburði</p>
+        <p>Við höldum reglulega viðburði. <a href="sidur/vidburdir.html">Skoðaðu viðburðið</a> eða <a href="sidur/form.html">Skráðu þig á viðburð</a>
+        </p>
+
+
     </body>
 
     <footer>
-        <h3>Opnunartími</h3>
+        <h2>Opnunartími</h2>
+        <table>
+            <tr>
+                <td>Mánudagar</td>
+                <td>Lokað</td>
+            </tr>
+            <tr>
+                <td>Þriðjudagar til fimmtudags</td>
+                <td>14:00–22:00</td>
+            </tr>
+            <tr>
+                <td>Föstudaga</td> 
+                <td>14:00–00:00</td>
+            </tr>
+            <tr>
+                <td>Laugardagur</td>
+                <td>12:00–00:00</td>
+            </tr>
+            <tr>
+                <td>Sunnudagur</td>
+                <td>14:00–22:00</td>
+            </tr>
+        </table>
 
-        <h3>Hér erum við</h3>
-        <p> 
-            Spilabúðin ehf.
-            Spilgata 1
-            101 Reykjavík
-            Sími 123-4567
-            spilabudin@example.org
-        </p>
-        <!-- laga layout á staðsetningu, bæta við opnunaartímun  -->
+        <h2>Hér erum við</h2>
+        <p> Spilabúðin ehf. </p>
+        <p>Spilgata 1 </p>	
+        <p>101 Reykjavík </p>
+        <p>Sími 123-4567 </p>
+        <p>spilabudin@example.org </p>
 
-        <h3>Samfélagsmiðlar</h3>
+        <h2>Samfélagsmiðlar</h2>
         <a href="https://www.facebook.com/HaskoliIslands/">Facebook</a>
         <a href="https://www.youtube.com/user/HIvarp">YouTube</a>
         <a href="https://www.instagram.com/haskoli_islands/">Instagram</a>
@@ -44,14 +91,4 @@
 
 
     
-
-
-
-
-
-    <!--Við höldum reglulega viðburði. [Skoðaðu viðburði](hlekkur-a-vidburdisidu) eða [skráðu þig á viðburð](hlekkur-a-skradningu).
-    
-    hafa link inn í texta
-    
-    -->
 </html>

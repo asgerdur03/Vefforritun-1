@@ -11,4 +11,4 @@ Open production deploy
 
 
 ## Verkefni
-[Verkefni 1](https://66c0ccadf0169f8ed9266354--eloquent-cucurucho-60b6fc.netlify.app/)
+[Verkefni 1](https://verkefni1-ajg.netlify.app/)
