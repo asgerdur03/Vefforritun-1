@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="is">
-    <head>
-        <meta charset="UTF-8">
-        <title>Skráningarform</title>
-    
-    </head>
 
-    <body>
-        <nav>
-            <h1>Valmynd</h1>
-            <ul>
-                <li><a href="../index.html">Forsíða Spilabúðarinnar</a></li>
-                <li><a href="../sidur/spil.html">Spil</a></li>
-                <li><a href="../sidur/vidburdir.html">Viðburðir</a></li>
-                <li><a href="../sidur/form.html">Skráning á viðburði</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>Skráningarform viðburðir Spilabúðarinnar</title>
 
+    <meta name="description" content="Skráning á viðburði Spilabúðarinnar">
+    <meta property="og:title" content="Skráningarform viðburðir Spilabúðarinnar">
+    <meta property="og:description" content="skráning á viðburði spilabúðarinnar">
+    <meta property="og:image" content="myndir/sharing.jpg">
+
+</head>
+
+<body>
+    <header>
         <h1>Skráning á viðburði</h1>
+        <a href="#efni" class="skip">Beint í efni</a>
+    </header>
+
+    <nav>
+        <h1>Valmynd</h1>
+        <ul>
+            <li><a href="../index.html">Forsíða Spilabúðarinnar</a></li>
+            <li><a href="../sidur/spil.html">Spil</a></li>
+            <li><a href="../sidur/vidburdir.html">Viðburðir</a></li>
+            <li><a href="../sidur/form.html">Skráning á viðburði</a></li>
+        </ul>
+    </nav>
+
+
+    <main id="efni">
+        <h1>Skráning á viðburði</h1>
+        <p>Skráðu þig á viðburði hjá okkur</p>
 
         <form>
             <fieldset>
                 <legend>Viðburður</legend>
                 <label>
-                    Hvaða viðburð viltu koma á? 
+                    Hvaða viðburð viltu koma á?
                     <select id="viðburður">
                         <option value="0">Púslukvöld</option>
                         <option value="1">Ticket to ride</option>
@@ -36,13 +50,14 @@
 
                 <!-- klukkan hvað? frá min 10:00 til max 00:00-->
 
-                <label> 
-                    Hvenær? frá <input type="time" min="10:00" max="00:00" required> til <input type="time" min="10:00" max="00:00" required>
+                <label>
+                    Hvenær? frá <input type="time" min="10:00" max="00:00" required> til <input type="time" min="10:00"
+                        max="00:00" required>
                 </label>
 
-                <label> 
+                <label>
                     Hversu mörg?
-                    <select id="fjoldi" >
+                    <select id="fjoldi">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -65,7 +80,7 @@
 
             <fieldset>
                 <legend>Panta mat</legend>
-            
+
                 <label>
                     Val um eitt af eftirfarandi
                     <select id="matur">
@@ -88,13 +103,13 @@
                 <legend>Þínar upplýsingar</legend>
 
                 <label>
-                Nafn: <input type="text" id="nafn" placeholder="Nafn" required>
+                    Nafn: <input type="text" id="nafn" placeholder="Nafn" required>
                 </label>
                 <label>
-                Netfang: <input type="text" id="netfang" placeholder="netfang@example.com" required>
+                    Netfang: <input type="text" id="netfang" placeholder="netfang@example.com" required>
                 </label>
                 <label>
-                Sími: <input type="text" id="sími" placeholder="123 4567" required>
+                    Sími: <input type="text" id="sími" placeholder="123 4567" required>
                 </label>
 
             </fieldset>
@@ -113,44 +128,47 @@
         </form>
 
         <a href="../index.html">Aftur á forsíðu</a>
-    </body>
 
-    <footer>
-        <h2>Opnunartími</h2>
-        <table>
-            <tr>
-                <td>Mánudagar</td>
-                <td>Lokað</td>
-            </tr>
-            <tr>
-                <td>Þriðjudagar til fimmtudags</td>
-                <td>14:00–22:00</td>
-            </tr>
-            <tr>
-                <td>Föstudaga</td> 
-                <td>14:00–00:00</td>
-            </tr>
-            <tr>
-                <td>Laugardagur</td>
-                <td>12:00–00:00</td>
-            </tr>
-            <tr>
-                <td>Sunnudagur</td>
-                <td>14:00–22:00</td>
-            </tr>
-        </table>
+    </main>
+</body>
 
-        <h2>Hér erum við</h2>
-        <p> Spilabúðin ehf. </p>
-        <p>Spilgata 1 </p>	
-        <p>101 Reykjavík </p>
-        <p>Sími 123-4567 </p>
-        <p>spilabudin@example.org </p>
+<footer>
+    <h2>Opnunartími</h2>
+    <table>
+        <tr>
+            <td>Mánudagar</td>
+            <td>Lokað</td>
+        </tr>
+        <tr>
+            <td>Þriðjudagar til fimmtudags</td>
+            <td>14:00–22:00</td>
+        </tr>
+        <tr>
+            <td>Föstudaga</td>
+            <td>14:00–00:00</td>
+        </tr>
+        <tr>
+            <td>Laugardagur</td>
+            <td>12:00–00:00</td>
+        </tr>
+        <tr>
+            <td>Sunnudagur</td>
+            <td>14:00–22:00</td>
+        </tr>
+    </table>
 
-        <h2>Samfélagsmiðlar</h2>
-        <a href="https://www.facebook.com/HaskoliIslands/">Facebook</a>
-        <a href="https://www.youtube.com/user/HIvarp">YouTube</a>
-        <a href="https://www.instagram.com/haskoli_islands/">Instagram</a>
+    <h2>Hér erum við</h2>
+    <p> Spilabúðin ehf. </p>
+    <p>Spilgata 1 </p>
+    <p>101 Reykjavík </p>
+    <p>Sími 123-4567 </p>
+    <p>spilabudin@example.org </p>
 
-    </footer>
+    <h2>Samfélagsmiðlar</h2>
+    <a href="https://www.facebook.com/HaskoliIslands/">Facebook</a>
+    <a href="https://www.youtube.com/user/HIvarp">YouTube</a>
+    <a href="https://www.instagram.com/haskoli_islands/">Instagram</a>
+
+</footer>
+
 </html>
