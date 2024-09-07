@@ -8,3 +8,5 @@
 
     </body>
 </html>
+
+alt +shift+f = lagar indent í html

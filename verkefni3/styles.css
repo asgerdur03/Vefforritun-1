@@ -1,0 +1,178 @@
+/* Setjum inn „reset“ sem fjarlægir margin og padding af öllu */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reiknum stærð á öllum boxum sem border-box */
+html {
+  box-sizing: border-box;
+}
+/* og látum erfast á allt */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* hjálpar class sem felur sjónrænt en skjálesarar lesa */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Almennt */
+
+/** Letur og stærðir **/
+
+/*** Grunnstærð er 16px ***/
+html {
+  font-size: 16px;
+}
+
+/*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
+@font-face {
+  /* TODO Bæta við leturgerð */
+  /*Matemasie regular*/ 
+}
+
+@font-face {
+  /* TODO Bæta við leturgerð */
+  /*Open Sans regular (400)*/
+}
+
+@font-face {
+  /* TODO Bæta við leturgerð */
+  /*Open Sans bold (700)*/
+}
+
+/*** Allt meginmál notar open sans ***/
+html,
+input,
+select,
+button {
+  /* TODO Skilgreina */
+}
+
+/*** Allar fyrirsagnir nota Matemasie regular ***/
+h1,
+h2,
+h3,
+legend {
+  /* TODO Skilgreina */
+}
+
+/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
+img {
+  max-width: 100%;
+}
+
+/** Litur á hlekkjum erfist frá foreldri **/
+a {
+  color: inherit;
+}
+
+/**
+ * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
+ * Við förum yfir flexbox í viku 4 en þangað til er hægt að nota þetta
+ * sem grunn og án breytinga.
+ * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
+ * innan <body>.
+ */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #f3dd99;
+}
+
+.wrapper main {
+  flex: 1;
+}
+
+/* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
+
+/** Haus á síðum **/
+
+header {
+  text-align: center;
+  background-color: #cc99bb;
+}
+
+
+
+/** Valmynd **/
+
+nav {
+  background-color: #eebbdd;
+
+  margin-bottom: 4px;
+  
+  /* TODO Skilgreina */
+}
+
+nav ul{
+  list-style: none;
+  text-align: center;
+
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+/** Meginmál og efni forsíðu **/
+main {
+  /* TODO Skilgreina */
+}
+
+/* TODO Skilgreina aðra selectora fyrir meginmál of forsíðu */
+
+/** Fótur **/
+
+footer {
+  background-color: #eebbdd;
+  border: 4px;
+  border: #cc99bb;
+}
+
+/* Ef við notum section fyrir hvert svæði undir fót, þá er hægt að nota eftirfarandi */
+footer > section {
+  display: inline-block;
+  /* Lætur efni byrja efst í línu, almennt myndum við nota flexbox hér! */
+  vertical-align: top;
+  /* TODO fleiri skilgreiningar */
+}
+
+/* TODO Skilgreina aðra selectora fyrir fót */
+
+/** Spilasíða, töflustílar **/
+
+table {
+  /* TODO Skilgreina */
+}
+
+/* TODO Skilgreina aðra selectora fyrir töflu */
+
+/** Viðburðir **/
+
+.event {
+  /* TODO Skilgreina, gerum ráð fyrir að hver viðburður hafi eigin selector */
+}
+
+/* TODO Skilgreina aðra selectora fyrir viðburði */
+
+/** Skráningarform **/
+
+/* TODO Skilgreina */
