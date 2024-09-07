@@ -37,6 +37,10 @@ html {
 
 /*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
 @font-face {
+  font-family: 'Matemasie';
+  font-style: normal;
+  font-weight: 400;
+  src:url('verkefni3\fonts\Matemasie-Regular.ttf') format('ttf');
   /* TODO Bæta við leturgerð */
   /*Matemasie regular*/ 
 }
@@ -64,12 +68,16 @@ h1,
 h2,
 h3,
 legend {
-  /* TODO Skilgreina */
+
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  /* replace with 'Matemasie' */
 }
 
 /** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
 img {
   max-width: 100%;
+  border: 5px;
+  border-radius: 3%;
 }
 
 /** Litur á hlekkjum erfist frá foreldri **/
@@ -102,26 +110,22 @@ a {
 /** Haus á síðum **/
 
 header {
+  padding: 1rem;
   text-align: center;
   background-color: #cc99bb;
 }
-
-
 
 /** Valmynd **/
 
 nav {
   background-color: #eebbdd;
-
-  margin-bottom: 4px;
-  
-  /* TODO Skilgreina */
+  padding: 1rem;
+  border-bottom: 4px solid #cc99bb;
 }
 
 nav ul{
   list-style: none;
   text-align: center;
-
 }
 nav ul li{
   display: inline-block;
@@ -134,7 +138,34 @@ nav ul li:last-child {
 
 /** Meginmál og efni forsíðu **/
 main {
+  max-width: 900px;
+  align-content: center;
+  width: 90%;
+
+  margin-bottom: 1rem;
   /* TODO Skilgreina */
+  text-align: left;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  
+}
+
+
+
+
+.main-image{
+  float:right;
+  max-width: 40%;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+
+p,
+img,
+form{
+  margin-bottom: 1rem;
 }
 
 /* TODO Skilgreina aðra selectora fyrir meginmál of forsíðu */
@@ -142,25 +173,61 @@ main {
 /** Fótur **/
 
 footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: #eebbdd;
-  border: 4px;
-  border: #cc99bb;
+  border-top: 4px solid #cc99bb;
+  text-align: center;
 }
 
 /* Ef við notum section fyrir hvert svæði undir fót, þá er hægt að nota eftirfarandi */
 footer > section {
+  margin-right: 1rem;
   display: inline-block;
   /* Lætur efni byrja efst í línu, almennt myndum við nota flexbox hér! */
   vertical-align: top;
+
+
   /* TODO fleiri skilgreiningar */
 }
+footer > section:last-child{
+  margin-right: 0;
+}
 
-/* TODO Skilgreina aðra selectora fyrir fót */
+footer dl,
+footer ul{
+  list-style: none;
+}
+
+footer dt{
+  font-weight: bold;
+}
+footer dd{
+  margin-bottom: 1rem;
+}
+
+section h2{
+  margin-bottom: 1rem;
+}
+
 
 /** Spilasíða, töflustílar **/
 
 table {
+  border-spacing:0 ;
+  
   /* TODO Skilgreina */
+  /*önnur hvor lína #eebbdd*/
+}
+
+tr:nth-child(odd){
+  background-color: #eebbdd;
+}
+tr:first-child{
+  background-color: green
+}
+tr:last-child{
+  background-color:green
 }
 
 /* TODO Skilgreina aðra selectora fyrir töflu */
@@ -168,11 +235,69 @@ table {
 /** Viðburðir **/
 
 .event {
+  
+
   /* TODO Skilgreina, gerum ráð fyrir að hver viðburður hafi eigin selector */
 }
 
+.event section{
+  display: inline-block;
+  margin-bottom: 5rem;
+}
+
+.event img{
+  float: left;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  
+}
+
+.event p{
+  display: block;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  background-color: green;
+
+}
 /* TODO Skilgreina aðra selectora fyrir viðburði */
 
 /** Skráningarform **/
 
-/* TODO Skilgreina */
+button{
+  border-radius: 5px;
+  background-color: #eebbdd;
+  padding: 0.5rem;
+  border: #eebbdd;
+}
+
+
+fieldset{
+  margin-bottom: 1rem;
+  border: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea,
+label{
+  display: block;
+  width:20rem;
+  max-width: 20rem;
+  min-height: 2rem;
+  border-radius: 0%;
+}
+
+label{
+  margin-top: 1rem;
+}
+
+input[type="checkbox"]{
+  display: inline-block;
+  border-radius: 0%;
+  margin-right: 0.5rem;
+}
+
