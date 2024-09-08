@@ -14,3 +14,6 @@ Open production deploy
 [Verkefni 1](https://verkefni1-ajg.netlify.app/)
 
 [Verkefni 2](https://verkefni2-ajg.netlify.app/)
+
+[Verkefni 3](https://verkefni3-ajg.netlify.app/)
+
