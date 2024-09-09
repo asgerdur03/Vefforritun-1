@@ -61,6 +61,7 @@ h2,
 h3,
 legend {
   font-family: matemasie;
+  margin-bottom: 0.5rem;
 }
 
 a {
@@ -118,14 +119,11 @@ gera í þessu verkefni
 **/
 
 /**
-- Spil
 - Laga margins og padding á öllu samhvæmt verkefnalýsingu
 **/
 
 img {
   max-width: 100%;
-
-  /* Laga mögulega evh hér */
   border: 5px;
   border-radius: 5px;
 }
@@ -139,9 +137,9 @@ form{
 main {
   align-content: center;
   padding: 1rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
   display: block;
+  max-width: 900px;
+  margin: 1rem 3rem 1rem  3rem;
 
 }
 .main-image{
@@ -157,25 +155,29 @@ main {
 
 table {
   border-spacing:0 ;
-  text-align: center;
-  
-  /* TODO Skilgreina */
+  text-align: left;
+  border-radius: 5px;
+  max-width: 100%;
 }
 
 table img{
-  min-width: 6rem;
+  min-width: 8rem;
+  margin-bottom: 0;
 }
 
 tr:nth-child(odd){
   background-color: #eebbdd;
 }
-tr:first-child{
-  background-color: green
-}
-tr:last-child{
-  background-color:green
+
+tr td:nth-child(6){
+  white-space: nowrap;
 }
 
+
+tr td,
+th{
+  padding:0.5rem;
+}
 
 /** Viðburðir **/
 .event{
@@ -184,7 +186,7 @@ tr:last-child{
 
 .event img{
   float: left;
-  width: 40%;
+  width: 30%;
   margin-right: 1rem;
 }
 
@@ -253,9 +255,7 @@ footer ul{
 footer dt{
   font-family: open-sans-bold;
 }
-footer dd{
-  margin-bottom: 1rem;
-}
+footer dd,
 section h2{
   margin-bottom: 1rem;
 }

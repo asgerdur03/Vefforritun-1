@@ -1,12 +1,3 @@
-Bæta þarf við auka elementum við lausn/sýnilausn til að geta náð fram útliti.
-
-Þar sem allt útlit skal útfæra í einni CSS skrá, skal huga að cascade og erfðum, þó er fullkomlega eðlilegt að endurtaka eigindi, en t.d. fyrir málsgreinar (`<p>`) þarf aðeins að taka fram einu sinni hvert margin þeirra er.
-
-
-
-### Spil
-
-Tafla sé með fyrirsagna röð og síðan aðra hvora röð með bakgrunnslitinn `#eebbdd`, þær raðir hafi fyrsta og seinasta reit með `5px` border radíus á þá kanta sem snúa út úr töflu (sjá fyrirmynd).
 
 ### Takmarkanir
 
