@@ -1,0 +1,574 @@
+/* Setjum inn „reset“ sem fjarlægir margin og padding af öllu */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reiknum stærð á öllum boxum sem border-box */
+html {
+  box-sizing: border-box;
+}
+/* og látum erfast á allt */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* hjálpar class sem felur sjónrænt en skjálesarar lesa */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Stillingar */
+
+:root {
+  --font-size-base: 16px;
+  --font-size-headings: 1.5rem;
+
+  /* Grunn bilið okkar er 1rem == 16px */
+  --spacing: 1rem;
+
+  /* Hámarks og lágmarks breidd á efni */
+  --max-width: 1200px;
+  --min-width-image: 200px;
+  --max-width-image: 300px;
+  --max-width-footer-section: 250px;
+
+  /* Border breiddir */
+  --border-width: 1px;
+  --border-radius-regular: 5px;
+  --border-radius-image: 10px;
+
+  /* Litir */
+  /** Litir með nafni **/
+  --color-yellow: #f3dd99;
+  --color-white: #ffffff;
+  --color-purple: #eebbdd;
+  --color-purple-dark: #cc99bb;
+
+  /** Litir með notkun **/
+  --color-background-primary: var(--color-yellow);
+  --color-background-secondary: var(--color-purple);
+  --color-background-form: var(--color-white);
+  --color-border-with-background: var(--color-purple-dark);
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: 'Open Sans', Arial, Helvetica, sans-serif;
+  --font-family-heading: 'Matemasie-Regular', 'Comic Sans MS', cursive;
+}
+
+/* Almennt */
+
+/** Letur og stærðir **/
+
+/*** Grunnstærð er 16px ***/
+html {
+  font-size: var(--font-size-base);
+}
+
+/*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/*** Allt meginmál notar open sans ***/
+html,
+input,
+select,
+button {
+  font-family: var(--font-family-base);
+}
+
+/*** Allar fyrirsagnir nota Matemasie regular ***/
+h1,
+h2,
+h3,
+legend {
+  font-family: var(--font-family-heading);
+}
+
+/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
+img {
+  max-width: 100%;
+}
+
+/** Litur á hlekkjum erfist frá foreldri **/
+a {
+  color: inherit;
+}
+
+/** „Til baka á forsíðu“ hlekkur **/
+.back {
+  margin-top: var(--spacing);
+}
+
+/** Almennt takka útlit, getur virkað á bæði <a> og <button> **/
+
+/* TODO útfæra og pæla í kommenti að ofan... hvaða semantík meikar sens hér? */
+
+/**
+ * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
+ * Við förum yfir flexbox í viku 4 en þangað til er hægt að nota þetta
+ * sem grunn og án breytinga.
+ * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
+ * innan <body>.
+ */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing);
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+}
+
+/* TODO hér væri gott að búa til auka wrapper fyrir allt efni (ekki header eða footer)
+og síðan wrapper fyrir nav og main til að stýra hvernig þau element taka pláss */
+
+/** Haus á síðum **/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+header {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--color-border-with-background);
+}
+/** Valmynd **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast töluvert ef
+.wrapper er notað eins og stungið upp á að ofan */
+
+/** Meginmál og efni forsíðu **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast */
+
+/**
+ * notum þetta til að fá bil á milli eininga _almennt_
+ * en ekki að hver eining þurfi að huga að bili
+ */
+main > .content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+/*** Inngangsefni á forsíðu ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn, hér þarf að aðlaga,
+hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
+
+/** Cards **/
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.cards > .title {
+  width: 100%;
+  text-align: center;
+}
+
+.cards > .content {
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+
+/** Card **/
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  /* hér verðum við að reikna út breidd svo að flex-wrap virki */
+  width: calc(50% - var(--spacing));
+}
+
+.card > .image {
+  width: 100%;
+}
+
+.card > .image img {
+  display: block;
+
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.card > .content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+
+  padding: calc(var(--spacing) / 2);
+  border: var(--border-regular);
+  border-top: 0;
+  border-bottom-left-radius: var(--border-radius-regular);
+  border-bottom-right-radius: var(--border-radius-regular);
+}
+
+/**
+ * notum nýja selectora! brotið niður
+ * .card            <- veljum öll .card
+ * :not(            <- nema, við viljum ef _ekki_...
+ *   :has(> .image) <- .image sem strangt barn .card
+ * )                <- endir á :not()
+ * > .content       <- sem er strax barn af .card
+ * Þ.e.a.s. fyrir .card sem hefur ekki .image, setja border + radíus á allt .content
+ */
+.card:not(:has(> .image)) > .content {
+  border: var(--border-regular);
+  border-radius: var(--border-radius-regular);
+}
+
+.card > .content > .text {
+  flex: 1;
+}
+
+.card > .content > .actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing);
+
+  margin-top: var(--spacing);
+}
+
+/** Fótur **/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #eebbdd;
+  border-top: 4px solid #cc99bb;
+  text-align: center;
+}
+
+footer > section {
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer > section:last-child{
+  margin-right: 0;
+}
+
+footer dl,
+footer ul{
+  list-style: none;
+}
+
+footer dt{
+  font-family: open-sans-bold;
+}
+footer dd,
+section h2{
+  margin-bottom: 1rem;
+}
+
+
+/*** Opnunartími ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/** Spilasíða, töflustílar **/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/** Viðburðir **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
+
+/** Skráningarform **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
+
+
+
+
+/** mín lausn content **/
+
+
+/* Gefið með Verkefni, ekki Breyta*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/*Almennt*/
+
+html {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: "matemasie";
+  font-weight: 400;
+  src:url("fonts/Matemasie-Regular.ttf"); 
+}
+
+@font-face {
+  font-family: "open-sans";
+  font-weight: 400;
+  src:url("fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "open-sans-bold";
+  font-weight: 700;
+  src:url("fonts/OpenSans-Bold.ttf");
+}
+
+html,
+input,
+select,
+button {
+  font-family: open-sans;
+}
+
+h1,
+h2,
+h3,
+legend {
+  font-family: matemasie;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f3dd99;
+}
+
+.wrapper main {
+  flex: 1;
+}
+/* Ekki breyta hér fyrir ofan */
+
+
+
+/** Haus á síðum **/
+header {
+  padding: 1rem;
+  text-align: center;
+  background-color: #cc99bb;
+}
+
+/** Valmynd **/
+nav {
+  background-color: #eebbdd;
+  padding: 1rem;
+  border-bottom: 4px solid #cc99bb;
+}
+nav ul{
+  list-style: none;
+  text-align: center;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 1rem;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+.valin {
+  font-family: open-sans-bold;
+}
+
+/** Meginmál og efni forsíðu **/
+
+/** 
+TODO: frá og með héðan, það sem ég á eftir að
+gera í þessu verkefni 
+**/
+
+/**
+- Laga margins og padding á öllu samhvæmt verkefnalýsingu
+**/
+
+img {
+  max-width: 100%;
+  border: 5px;
+  border-radius: 5px;
+}
+
+p,
+img,
+form{
+  margin-bottom: 1rem;
+}
+
+main {
+  align-content: center;
+  padding: 1rem;
+  display: block;
+  max-width: 900px;
+  margin: 1rem 3rem 1rem  3rem;
+
+}
+.main-image{
+  float:right;
+  max-width: 40%;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  min-width: 15rem;
+  
+}
+
+/** Spilasíða, töflustílar **/
+
+table {
+  border-spacing:0 ;
+  text-align: left;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+table img{
+  min-width: 8rem;
+  margin-bottom: 0;
+}
+
+tr:nth-child(odd){
+  background-color: #eebbdd;
+}
+
+tr td:nth-child(6){
+  white-space: nowrap;
+}
+
+
+tr td,
+th{
+  padding:0.5rem;
+}
+
+/** Viðburðir **/
+.event{
+  margin-bottom: 5rem;
+}
+
+.event img{
+  float: left;
+  width: 30%;
+  margin-right: 1rem;
+}
+
+.event-link{
+  clear:left;
+}
+
+/** Skráningarform **/
+button{
+  border-radius: 5px;
+  background-color: #eebbdd;
+  padding: 0.5rem 1rem;
+  border: #eebbdd;
+}
+fieldset{
+  margin-bottom: 1rem;
+  border: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea,
+label{
+  display: block;
+  width:20rem;
+  max-width: 20rem;
+  min-height: 2rem;
+  border-radius: 0%;
+}
+label{
+  margin-top: 1rem;
+}
+input[type="checkbox"]{
+  display: inline-block;
+  border-radius: 0%;
+  margin-right: 0.5rem;
+}
+
+/** Fótur **/
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #eebbdd;
+  border-top: 4px solid #cc99bb;
+  text-align: center;
+}
+
+footer > section {
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer > section:last-child{
+  margin-right: 0;
+}
+
+footer dl,
+footer ul{
+  list-style: none;
+}
+
+footer dt{
+  font-family: open-sans-bold;
+}
+footer dd,
+section h2{
+  margin-bottom: 1rem;
+}
