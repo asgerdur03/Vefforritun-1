@@ -1,21 +1,20 @@
-/* Setjum inn „reset“ sem fjarlægir margin og padding af öllu */
+
+/* Gefið með Verkefni, ekki Breyta*/
 * {
   margin: 0;
   padding: 0;
 }
 
-/* Reiknum stærð á öllum boxum sem border-box */
 html {
   box-sizing: border-box;
 }
-/* og látum erfast á allt */
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-/* hjálpar class sem felur sjónrænt en skjálesarar lesa */
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -26,89 +25,64 @@ html {
   width: 1px;
 }
 
-/* Almennt */
+/*Almennt*/
 
-/** Letur og stærðir **/
-
-/*** Grunnstærð er 16px ***/
 html {
   font-size: 16px;
 }
 
-/*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
 @font-face {
-  font-family: 'Matemasie';
-  font-style: normal;
+  font-family: "matemasie";
   font-weight: 400;
-  src:url('verkefni3\fonts\Matemasie-Regular.ttf') format('ttf');
-  /* TODO Bæta við leturgerð */
-  /*Matemasie regular*/ 
+  src:url("fonts/Matemasie-Regular.ttf"); 
 }
 
 @font-face {
-  /* TODO Bæta við leturgerð */
-  /*Open Sans regular (400)*/
+  font-family: "open-sans";
+  font-weight: 400;
+  src:url("fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
-  /* TODO Bæta við leturgerð */
-  /*Open Sans bold (700)*/
+  font-family: "open-sans-bold";
+  font-weight: 700;
+  src:url("fonts/OpenSans-Bold.ttf");
 }
 
-/*** Allt meginmál notar open sans ***/
 html,
 input,
 select,
 button {
-  /* TODO Skilgreina */
+  font-family: open-sans;
 }
 
-/*** Allar fyrirsagnir nota Matemasie regular ***/
 h1,
 h2,
 h3,
 legend {
-
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-  /* replace with 'Matemasie' */
+  font-family: matemasie;
 }
 
-/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
-img {
-  max-width: 100%;
-  border: 5px;
-  border-radius: 3%;
-}
-
-/** Litur á hlekkjum erfist frá foreldri **/
 a {
   color: inherit;
 }
 
-/**
- * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
- * Við förum yfir flexbox í viku 4 en þangað til er hægt að nota þetta
- * sem grunn og án breytinga.
- * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
- * innan <body>.
- */
 .wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-
   background-color: #f3dd99;
 }
 
 .wrapper main {
   flex: 1;
 }
+/* Ekki breyta hér fyrir ofan */
 
-/* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
+
 
 /** Haus á síðum **/
-
 header {
   padding: 1rem;
   text-align: center;
@@ -116,13 +90,11 @@ header {
 }
 
 /** Valmynd **/
-
 nav {
   background-color: #eebbdd;
   padding: 1rem;
   border-bottom: 4px solid #cc99bb;
 }
-
 nav ul{
   list-style: none;
   text-align: center;
@@ -131,36 +103,32 @@ nav ul li{
   display: inline-block;
   margin-right: 1rem;
 }
-
 nav ul li:last-child {
   margin-right: 0;
 }
+.valin {
+  font-family: open-sans-bold;
+}
 
 /** Meginmál og efni forsíðu **/
-main {
-  max-width: 900px;
-  align-content: center;
-  width: 90%;
 
-  margin-bottom: 1rem;
-  /* TODO Skilgreina */
-  text-align: left;
-  margin-left: 3rem;
-  margin-top: 1rem;
-  
+/** 
+TODO: frá og með héðan, það sem ég á eftir að
+gera í þessu verkefni 
+**/
+
+/**
+- Spil
+- Laga margins og padding á öllu samhvæmt verkefnalýsingu
+**/
+
+img {
+  max-width: 100%;
+
+  /* Laga mögulega evh hér */
+  border: 5px;
+  border-radius: 5px;
 }
-
-
-
-
-.main-image{
-  float:right;
-  max-width: 40%;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-
-}
-
 
 p,
 img,
@@ -168,56 +136,34 @@ form{
   margin-bottom: 1rem;
 }
 
-/* TODO Skilgreina aðra selectora fyrir meginmál of forsíðu */
+main {
+  align-content: center;
+  padding: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: block;
 
-/** Fótur **/
-
-footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #eebbdd;
-  border-top: 4px solid #cc99bb;
-  text-align: center;
 }
-
-/* Ef við notum section fyrir hvert svæði undir fót, þá er hægt að nota eftirfarandi */
-footer > section {
-  margin-right: 1rem;
-  display: inline-block;
-  /* Lætur efni byrja efst í línu, almennt myndum við nota flexbox hér! */
-  vertical-align: top;
-
-
-  /* TODO fleiri skilgreiningar */
-}
-footer > section:last-child{
-  margin-right: 0;
-}
-
-footer dl,
-footer ul{
-  list-style: none;
-}
-
-footer dt{
-  font-weight: bold;
-}
-footer dd{
+.main-image{
+  float:right;
+  max-width: 40%;
+  margin-left: 1rem;
   margin-bottom: 1rem;
+  min-width: 15rem;
+  
 }
-
-section h2{
-  margin-bottom: 1rem;
-}
-
 
 /** Spilasíða, töflustílar **/
 
 table {
   border-spacing:0 ;
+  text-align: center;
   
   /* TODO Skilgreina */
-  /*önnur hvor lína #eebbdd*/
+}
+
+table img{
+  min-width: 6rem;
 }
 
 tr:nth-child(odd){
@@ -230,52 +176,33 @@ tr:last-child{
   background-color:green
 }
 
-/* TODO Skilgreina aðra selectora fyrir töflu */
 
 /** Viðburðir **/
-
-.event {
-  
-
-  /* TODO Skilgreina, gerum ráð fyrir að hver viðburður hafi eigin selector */
-}
-
-.event section{
-  display: inline-block;
+.event{
   margin-bottom: 5rem;
 }
 
 .event img{
   float: left;
-  margin-left: 0.5rem;
-  margin-bottom: 0.5rem;
-  
+  width: 40%;
+  margin-right: 1rem;
 }
 
-.event p{
-  display: block;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  background-color: green;
-
+.event-link{
+  clear:left;
 }
-/* TODO Skilgreina aðra selectora fyrir viðburði */
 
 /** Skráningarform **/
-
 button{
   border-radius: 5px;
   background-color: #eebbdd;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: #eebbdd;
 }
-
-
 fieldset{
   margin-bottom: 1rem;
   border: none;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -290,14 +217,45 @@ label{
   min-height: 2rem;
   border-radius: 0%;
 }
-
 label{
   margin-top: 1rem;
 }
-
 input[type="checkbox"]{
   display: inline-block;
   border-radius: 0%;
   margin-right: 0.5rem;
 }
 
+/** Fótur **/
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #eebbdd;
+  border-top: 4px solid #cc99bb;
+  text-align: center;
+}
+
+footer > section {
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer > section:last-child{
+  margin-right: 0;
+}
+
+footer dl,
+footer ul{
+  list-style: none;
+}
+
+footer dt{
+  font-family: open-sans-bold;
+}
+footer dd{
+  margin-bottom: 1rem;
+}
+section h2{
+  margin-bottom: 1rem;
+}
