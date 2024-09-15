@@ -2,7 +2,7 @@
 
 git add -A
 git commit -m "message"
-git push (þarf ekki fyrr en í lok)
+git push 
 
 ### Netlify
 Add new site
