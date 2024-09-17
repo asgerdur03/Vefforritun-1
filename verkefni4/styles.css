@@ -115,7 +115,6 @@ img {
 a {
   color: inherit;
 }
-
 /** „Til baka á forsíðu“ hlekkur **/
 .back {
   margin-top: var(--spacing);
@@ -125,25 +124,37 @@ a {
 
 
 
-/** Viðburðir **/
-
-/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
-
-
-
 /** Skráningarform **/
 
 /* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
-.cards div{
-  width: 100%;
-
+fieldset {
+  border: 0;
 }
+
+
+
+fieldset input,
+fieldset select,
+fieldset textarea {
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+fieldset input[type='checkbox'] {
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: auto;
+}
+
 
 /** Almennt takka útlit, getur virkað á bæði <a> og <button> **/
 button{
   background-color: var(--color-background-secondary);
   border-radius: var(--border-radius-regular);
-  width: 5rem;
+  padding: 2%;
+  
 }
 
 /* TODO útfæra og pæla í kommenti að ofan... hvaða semantík meikar sens hér? */
@@ -156,36 +167,39 @@ button{
 
   width: 100%;
   min-height: 100vh;
-  
 
   background-color: var(--color-background-primary);
   
 }
-
-
-
-/* TODO hér væri gott að búa til auka wrapper fyrir allt 
-efni (ekki header eða footer) og síðan wrapper fyrir nav 
-og main til að stýra hvernig þau element taka pláss */
-
-.navigation { /* wrapper fyrir nav */
-  display: flex;
-
-  /*to the left of the main*/
-  
-  
+.wrapper .wrapper-content{
+  flex: 1;
 }
 
-.main { /* wrapper fyrir main */
+.wrapper-content {
   display: flex;
+  margin: 0 auto 2em auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  gap : var(--spacing);
+
 }
 
+.main-top{
+  display: flex;
+  justify-content: space-between;
 
+  gap: var(--spacing);
+}
+
+.main-top img{
+  max-width: 30%;
+  border-radius: var(--border-radius-image);
+}
 
 
 /** Haus á síðum **/
 
-/* TODO nota úr sýnilausn eða þinni lausn */
 header{
   display: flex;
   justify-content: center;
@@ -197,13 +211,10 @@ header{
 }
 
 /** Valmynd **/
-
-/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast töluvert ef
-.wrapper er notað eins og stungið upp á að ofan */
-
-/** Meginmál og efni forsíðu **/
-
-/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast */
+nav ul {
+  list-style: none;
+  
+}
 
 /**
  * notum þetta til að fá bil á milli eininga _almennt_
@@ -216,30 +227,15 @@ main > .content {
 
 }
 
-/*** Inngangsefni á forsíðu ***/
-
-/* TODO nota úr sýnilausn eða þinni lausn, hér þarf að aðlaga,
-hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
-
-.lina{
-  display: flex;
-  flex-direction: row-reverse;
-  margin-bottom: 2rem;
-}
-.lina > img{
-  border-radius: var(--border-radius-image);
-}
-
-
 
 /** Cards **/
 
 .cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: var(--spacing);
-
-  flex-wrap: wrap;
+  
+  /*flex-wrap: wrap;*/
 }
 
 .cards > .title {
@@ -263,7 +259,6 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   flex-direction: column;
   border: 1px solid black;
   border-radius: 5px;
-
 
   /* hér verðum við að reikna út breidd svo að flex-wrap virki */
   width: calc(50% - var(--spacing));
@@ -322,11 +317,10 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   gap: var(--spacing);
 
   margin-top: var(--spacing);
+  
 }
 
 /** Fótur **/
-
-/* TODO nota úr sýnilausn eða þinni lausn */
 
 /*Laga samhvæmt verkefni*/
 footer {
@@ -403,20 +397,48 @@ table td:last-child {
   white-space: nowrap;
 }
 
-/** Viðburðir **/
-
-/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
-
-/** Skráningarform **/
-
-/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
-
-
-
+/*** TODO ***/
+/*
+- nota flexbox til að stíla og laga skráningarform
+- laga texta á forsíðu
+- laga og gera takka functional
+- laga bil og general shit
+- nota dæmi úr :root í stað literal gilda
+- villuprófa með w3c validator
 
 
 
 
+*/
+
+
+
+
+
+
+/*helpers */
+
+/*
+.text{
+  background-color: blue;
+}
+.card{
+  background-color: red;
+  box-shadow: red 5px 5px;
+}
+.cards{
+  background-color: green;
+}
+.content{
+  background-color: purple;
+}
+.title{
+  background-color: yellow;
+}
+.image{
+  background-color: pink;
+}
+  
 
 
 

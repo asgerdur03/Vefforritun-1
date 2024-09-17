@@ -1,100 +1,138 @@
 <!DOCTYPE html>
 <html lang="is">
+  <head>
+    <link rel="stylesheet" href="../styles.css" />
+    <meta charset="utf-8" />
+    <title>Spilabúðin—Viðburðir</title>
+    <meta name="description" content="Næstu viðburðir hjá Spilabúðinni." />
+    <meta property="og:title" content="Spilabúðin" />
+    <meta
+      property="og:description"
+      content="Næstu viðburðir hjá Spilabúðinni."
+    />
+    <meta property="og:image" content="./myndir/sharing.jpg" />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="../styles.css">
-  <meta charset="utf-8">
-  <title>Spilabúðin—Viðburðir</title>
-  <meta name="description" content="Næstu viðburðir hjá Spilabúðinni.">
-  <meta property="og:title" content="Spilabúðin">
-  <meta property="og:description" content="Næstu viðburðir hjá Spilabúðinni.">
-  <meta property="og:image" content="./myndir/sharing.jpg">
-</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Spilabúðin—Viðburðir</h1>
+      </header>
 
-<body>
-  <div class="wrapper">
-    <header class="header">
-      <h1>Spilabúðin—Viðburðir</h1>
-    </header>
+      <p class="sr-only"><a href="#efni">Beint í efni</a></p>
 
-    <p class="sr-only"><a href="#efni">Beint í efni</a></p>
+      <div class="wrapper-content">
+        <nav>
+          <ul>
+            <li><a href="../index.html">Forsíða</a></li>
+            <li><a href="./spil.html">Spil</a></li>
+            <li><strong>Viðburðir</strong></li>
+            <li><a href="./skraning.html">Skráning á viðburði</a></li>
+          </ul>
+        </nav>
 
-    <nav>
-      <ul>
-        <li><a href="../index.html">Forsíða</a></li>
-        <li><a href="./spil.html">Spil</a></li>
-        <li><strong>Viðburðir</strong></li>
-        <li><a href="./skraning.html">Skráning á viðburði</a></li>
-      </ul>
-    </nav>
+        <main id="efni">
+          
+          <div class="cards">
+            <div class="content">
+              <section class="card">
+                <div class="image">
+                  <img
+                    src="../myndir/puzzle.jpg"
+                    alt="Mynd af borði með hálfkláruðu púsluspili, hönd bendir á stakt púsl."
+                    width="200"
+                  />
+                </div>
 
-    <main id="efni" class="cards">
-      <section class="card" class="event" >
-        <h3 class="title">Púslukvöld</h3>
-        <div class="content">
-          <img src="../myndir/puzzle.jpg" alt="Mynd af borði með hálfkláruðu púsluspili, hönd bendir á stakt púsl."
-            width="200">
-          <p>Komdu á púslukvöld í spilabúðina. Við bjóðum upp á púsluspil og góða stemningu. Byrjum snemma og endum
-            seint.
-            Allt frá 50 bitum upp í 5000 bita púsl.</p>
-        </div>
-        <p class="register"><a href="./skraning.html">Skrá mig á púslukvöld</a>.</p>
-      </section>
+              
+                <div class="content">
+                  <h3 class="title">Púslukvöld</h3>
+                  <div class="text">
+                    <p>
+                      Komdu á púslukvöld í spilabúðina. Við bjóðum upp á
+                      púsluspil og góða stemningu. Byrjum snemma og endum seint.
+                      Allt frá 50 bitum upp í 5000 bita púsl.
+                    </p>
+                  </div>
+                  <div class="actions">
+                    <button class="button">Skrá mig á púslukvöld</button>
+                  </div>
+                </div>
+              </section>
 
-      <section class="card" class="event">
-        <h3 class="title">Ticket to Ride</h3>
-        <div class="content">
-          <img src="../myndir/ticket-to-ride.jpg" alt="Mynd af spilaborði Ticket to Ride, hönd setur niður lestarvagn."
-            width="200">
-          <p>Elskar þú lestir og leiki? Komdu á Ticket to Ride viðburð í spilabúðina. Spilum allan daginn, bókaðu
-            klukkustund eða lengur.</p>
-        </div>
-        <p class="register"><a href="./skraning.html">Skrá mig á Ticket to Ride</a>.</p>
-      </section>
+              <section class="card">
+                <div class="image">
+                    <img
+                      src="../myndir/ticket-to-ride.jpg"
+                      alt="Mynd af spilaborði Ticket to Ride, hönd setur niður lestarvagn."
+                      width="200"
+                    />
+                  </div>
+                <div class="content">
+                  <h3 class="title">Ticket to ride</h3>
+                  
+                  <div class="text">
+                    <p>
+                      Elskar þú lestir og leiki? Komdu á Ticket to Ride viðburð
+                      í spilabúðina. Spilum allan daginn, bókaðu klukkustund eða
+                      lengur.
+                    </p>
+                  </div>
+                  <div class="actions">
+                    <button class="button">Skrá mig á Ticket to ride</button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
 
-      <p class="back"><a href="../index.html">Aftur á forsíðu</a>.</p>
-    </main>
+          <p class="back"><a href="../index.html">Aftur á forsíðu</a>.</p>
+        </main>
+      </div>
 
-    <footer>
-      <section>
-        <h2>Opnunartími</h2>
-        <dl>
-          <dt>Mánudagar</dt>
-          <dd>Lokað</dd>
-          <dt>Þriðjudagar til fimmtudags</dt>
-          <dd>14:00–22:00</dd>
-          <dt>Föstudaga</dt>
-          <dd>14:00–00:00</dd>
-          <dt>Laugardaga</dt>
-          <dd>12:00–00:00</dd>
-          <dt>Sunnudaga</dt>
-          <dd>12:00–22:00</dd>
-        </dl>
-      </section>
+      <footer>
+        <section>
+          <h2>Opnunartími</h2>
+          <dl>
+            <dt>Mánudagar</dt>
+            <dd>Lokað</dd>
+            <dt>Þriðjudagar til fimmtudags</dt>
+            <dd>14:00–22:00</dd>
+            <dt>Föstudaga</dt>
+            <dd>14:00–00:00</dd>
+            <dt>Laugardaga</dt>
+            <dd>12:00–00:00</dd>
+            <dt>Sunnudaga</dt>
+            <dd>12:00–22:00</dd>
+          </dl>
+        </section>
 
-      <section>
-        <h2>Hér erum við</h2>
-        <ul>
-          <li>Spilabúðin ehf.</li>
-          <li>Spilagata 1 10</li>
-          <li>101 Reykjavík</li>
-          <li><a href="tel:1234567">Sími 123-4567</a></li>
-          <li>
-            <a href="mailto:spilabudin@example.org">spilabudin@example.org</a>
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h2>Hér erum við</h2>
+          <ul>
+            <li>Spilabúðin ehf.</li>
+            <li>Spilagata 1 10</li>
+            <li>101 Reykjavík</li>
+            <li><a href="tel:1234567">Sími 123-4567</a></li>
+            <li>
+              <a href="mailto:spilabudin@example.org">spilabudin@example.org</a>
+            </li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Samfélagsmiðlar</h2>
-        <ul>
-          <li><a href="https://www.facebook.com/HaskoliIslands/">Facebook</a></li>
-          <li><a href="https://www.youtube.com/user/HIvarp">YouTube</a></li>
-          <li><a href="https://www.instagram.com/haskoli_islands/">Instagram</a></li>
-        </ul>
-      </section>
-    </footer>
-  </div>
-</body>
-
+        <section>
+          <h2>Samfélagsmiðlar</h2>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/HaskoliIslands/">Facebook</a>
+            </li>
+            <li><a href="https://www.youtube.com/user/HIvarp">YouTube</a></li>
+            <li>
+              <a href="https://www.instagram.com/haskoli_islands/">Instagram</a>
+            </li>
+          </ul>
+        </section>
+      </footer>
+    </div>
+  </body>
 </html>
