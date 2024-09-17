@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="is">
   <head>
-    <link rel="stylesheet" href="../styles.css" />
-    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" >
+    <meta charset="utf-8" >
     <title>Spilabúðin—Skráning á viðburði</title>
     <meta
       name="description"
       content="Spilabúðin selur spil, heldur viðburði og býður upp á skemmtilega stund. Kíktu á okkur á Spilagötu 1."
-    />
-    <meta property="og:title" content="Spilabúðin" />
+    >
+    <meta property="og:title" content="Spilabúðin" >
     <meta
       property="og:description"
       content="Spilabúðin selur spil, heldur viðburði og býður upp á skemmtilega stund. Kíktu á okkur á Spilagötu 1."
-    />
-    <meta property="og:image" content="./myndir/sharing.jpg" />
+    >
+    <meta property="og:image" content="./myndir/sharing.jpg" >
   </head>
 
   <body>
@@ -35,6 +35,7 @@
         </nav>
 
         <main id="efni">
+
           <div class="content">
             <p>Skráðu þig á viðburði hjá okkur!</p>
 
@@ -42,24 +43,26 @@
               <div class="cards">
                 <div class="content">
 
-
+                
                   
                   <section class="card">
-                    <fieldset>
-                      <legend>Viðburður</legend>
+                    <h3>Viðburður </h3>
+                    <fieldset  class="content">
+                      <!---->
+                    
                       
-                        <div>
+                        <div class="slay">
                           <label for="event">Hvaða viðburð viltu koma á?</label>
                           <select id="event">
                             <option>Púslukvöld</option>
                             <option>Ticket to Ride</option>
                           </select>
                         </div>
-                        <div>
+                        <div class ="slay">
                           <label for="when">Hvenær viltu koma?</label>
-                          <input type="datetime-local" id="when" name="when" />
+                          <input type="datetime-local" id="when" name="when" >
                         </div>
-                        <div>
+                        <div class="slay">
                           <label for="time">Klukkan hvað?</label>
                           <select id="time">
                             <option>10:00–11:00</option>
@@ -78,7 +81,7 @@
                             <option>23:00–00:00</option>
                           </select>
                         </div>
-                        <div>
+                        <div class="slay">
                           <label for="size">Hve mörg?</label>
                           <select id="size">
                             <option>1</option>
@@ -93,7 +96,7 @@
                             <option>10</option>
                           </select>
                         </div>
-                        <div>
+                        <div class="slay">
                           <label for="special">Viltu taka eitthvað fram?</label>
                           <textarea id="special"></textarea>
                         </div>
@@ -102,10 +105,11 @@
                   </section>
 
                   <section class="card">
-                    <fieldset>
-                      <legend>Panta mat</legend>
+                    <h3>Panta mat</h3>
+                    <fieldset class="content">
                       
-                        <div>
+                      
+                        <div class="slay">
                           <label for="food">Viltu mat?</label>
                           <select id="food">
                             <option>Pizzusneið og gos</option>
@@ -115,11 +119,11 @@
                         </div>
                         <div>
                           <label>
-                            <input type="checkbox" name="allergy" />Ofnæmi sem
+                            <input type="checkbox" name="allergy" > Ofnæmi sem
                             við ættum að vita af?
                           </label>
                         </div>
-                        <div>
+                        <div class="slay">
                           <label for="special-food"
                             >Annað sem við eigum að vita?</label
                           >
@@ -129,14 +133,17 @@
                     </fieldset>
                   </section>
 
+                
+
                   <section class="card">
-                    <fieldset>
-                      <legend>Þínar upplýsingar</legend>
-                      <div>
+                    <h3>Þinna upplýsingar</h3>
+                    <fieldset class="content">
+
+                      <div class="slay">
                         <label for="name">Nafn</label>
-                        <input id="name" type="text" required />
+                        <input id="name" type="text" required >
                       </div>
-                      <div>
+                      <div class="slay">
                         <label for="email">Netfang</label>
                         <input
                           id="email"
@@ -144,32 +151,36 @@
                           type="email"
                           required
                           placeholder="nafn@example.org"
-                        />
+                        >
                       </div>
-                      <div>
+                      <div class="slay">
                         <label for="phone">Sími</label>
                         <input
                           id="phone"
                           type="tel"
                           required
                           placeholder="345-6789"
-                        />
+                        >
                       </div>
                     </fieldset>
+                  
                   </section>
 
+              
                   <section class="card">
-                    <fieldset>
-                      <legend>Samþykkja og panta</legend>
-                      <div>
+                    <h3>Samþykkja og panta</h3>
+                    <fieldset class="content">
+                      <div class="text">
                         <label>
-                          <input type="checkbox" name="terms" />Ég samþykki
+                          <input type="checkbox" name="terms" > Ég samþykki
                           skilmála Spilabúðarinnar
                         </label>
                       </div>
-                      <button>Panta</button>
+                      <div class="actions"><button>Panta</button></div>
                     </fieldset>
                   </section>
+
+
                 </div>
               </div>
             </form>
