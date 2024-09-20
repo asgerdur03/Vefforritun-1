@@ -35,6 +35,10 @@ html {
   /* Grunn bilið okkar er 1rem == 16px */
   --spacing: 1rem;
 
+  /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
+  --vertical-space: calc(var(--gutter) * 1);
+  --vertical-space-large: calc(var(--gutter) * 1.5);
+
   /* Hámarks og lágmarks breidd á efni */
   --max-width: 1200px;
   --min-width-image: 200px;
@@ -45,13 +49,20 @@ html {
   --border-width: 1px;
   --border-radius-regular: 5px;
   --border-radius-image: 10px;
-  --border-regular: 1px solid #000; /* todo longhand */
-  --border-with-background: 4px solid #cc99bb;
+
+  /* Grid stillingar */
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+
+  /* Breidd á efni með offset */
+  --width-offset: calc(100% - (2 * var(--offset)));
 
   /* Litir */
   /** Litir með nafni **/
   --color-yellow: #f3dd99;
   --color-white: #ffffff;
+  --color-black: #000000;
   --color-purple: #eebbdd;
   --color-purple-dark: #cc99bb;
 
@@ -65,8 +76,12 @@ html {
   --font-base-size: 1rem;
   --font-family-base: 'Open Sans', Arial, Helvetica, sans-serif;
   --font-family-heading: 'Matemasie-Regular', 'Comic Sans MS', cursive;
-}
 
+  /* Transitions */
+  --transition-time-short: 300ms;
+  --transition-time-long: 600ms;
+  --transition-timing-function: ease-in-out;
+}
 /* Almennt */
 
 /** Letur og stærðir **/
@@ -74,6 +89,7 @@ html {
 /*** Grunnstærð er 16px ***/
 html {
   font-size: var(--font-size-base);
+  background-color: var(--color-background-primary);
 }
 
 /*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
@@ -141,6 +157,14 @@ a {
   background-color: var(--color-background-secondary);
   font-size: 1rem;
   text-decoration: none;
+
+  transition: var(--transition-time-short);
+  
+}
+
+.button:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 /**
@@ -151,14 +175,18 @@ a {
  * innan <body>.
  */
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing);
+  /* Notum grid hér til að setja upp bil á milli header, meginmáls og fóts */
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+
+  /* grid items eru miðjuð */
+  justify-items: center;
+
+  gap: var(--vertical-space);
 
   width: 100%;
   min-height: 100vh;
-
   background-color: var(--color-background-primary);
 }
 
@@ -198,6 +226,7 @@ header {
 /** Valmynd **/
 
 nav {
+  background-color: yellow;
 }
 
 nav ul {
@@ -242,10 +271,27 @@ main > .content {
 
 /** Cards **/
 
-.cards {
+
+main > .content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing);
+  gap: calc(var(--spacing) * 2);
+}
+
+/*** Inngangsefni á forsíðu ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn, hér þarf að aðlaga,
+hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
+
+/** Cards **/
+
+.cards {
+  display: grid;
+  grid-template-rows: auto;
+  gap: var(--vertical-space);
+  justify-items: center;
+
+  width: 100%;
 }
 
 .cards > .title {
@@ -254,13 +300,19 @@ main > .content {
 }
 
 .cards > .content {
-  display: flex;
-  justify-content: center;
-  gap: calc(var(--spacing) * 2);
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: auto;
+  gap: var(--vertical-space);
+  justify-items: center;
 
   width: 100%;
 }
+
+/* TODO skilgreinda brotpunkt fyrir .cards .content */
+@media (min-width: 99999px) {
+  /* TODO hvaða stílar ættu að vera hér? */
+}
+
 
 /** Card **/
 
@@ -270,6 +322,16 @@ main > .content {
 
   /* hér verðum við að reikna út breidd svo að flex-wrap virki */
   width: calc(50% - var(--spacing));
+
+  border: var(--border-width) solid var(--color-black);
+  border-radius: var(--border-radius-regular);
+
+
+}
+
+/* TODO skilgreinda brotpunkt fyrir .card */
+@media (min-width: 99999px) {
+  /* TODO hvaða stílar ættu að vera hér? */
 }
 
 .card > .image {
@@ -457,4 +519,25 @@ fieldset input[type='checkbox'] {
   margin-right: calc(var(--spacing) * 0.5);
   width: auto;
 }
+
+
+/*
+.text{
+  background-color: blue;
+}
+.card{
+  background-color: red;
+  box-shadow: red 5px 5px;
+}
+.cards{
+  background-color: green;
+}
+.content{
+  background-color: purple;
+}
+.title{
+  background-color: yellow;
+}
+
+  
 

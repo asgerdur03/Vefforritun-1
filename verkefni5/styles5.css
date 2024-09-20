@@ -145,7 +145,7 @@ html {
  * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
  * innan <body>.
  */
- .wrapper {
+.wrapper {
   /* Notum grid hér til að setja upp bil á milli header, meginmáls og fóts */
   display: grid;
   grid-template-rows: auto;
@@ -158,7 +158,6 @@ html {
 
   width: 100%;
   min-height: 100vh;
-
   background-color: var(--color-background-primary);
 }
 
