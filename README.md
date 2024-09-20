@@ -21,3 +21,5 @@ ALT + SHIFT + F
 
 [Verkefni 3](https://verkefni3-ajg.netlify.app/)
 
+[Verkefni 4](https://verkefni4-ajg.netlify.app/)
+

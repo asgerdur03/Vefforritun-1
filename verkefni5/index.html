@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="is">
+
+<head>
+  <meta charset="utf-8">
+  <title>Spilabúðin</title>
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="description"
+    content="Spilabúðin selur spil, heldur viðburði og býður upp á skemmtilega stund. Kíktu á okkur á Spilagötu 1.">
+  <meta property="og:title" content="Spilabúðin">
+  <meta property="og:description"
+    content="Spilabúðin selur spil, heldur viðburði og býður upp á skemmtilega stund. Kíktu á okkur á Spilagötu 1.">
+  <meta property="og:image" content="./myndir/sharing.jpg">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Spilabúðin</h1>
+    </header>
+
+    <p class="sr-only"><a href="#efni">Beint í efni</a></p>
+
+    <div class="wrapper-content">
+      <nav class="wrapper-nav">
+        <ul>
+          <li><strong>Forsíða</strong></li>
+          <li><a href="sidur/spil.html">Spil</a></li>
+          <li><a href="sidur/vidburdir.html">Viðburðir</a></li>
+          <li><a href="sidur/skraning.html">Skráning á viðburði</a></li>
+        </ul>
+      </nav>
+
+      <main id="efni" class="wrapper-main">
+        <div class="content">
+
+          <div class="intro">
+            <img src="./myndir/spilabudin.jpg"
+              alt="Inngangur að Spilabúðinni, blámálað hús með stórum gluggum. Í gluggunum eru litríkir hlutir. Fyrir framan húsið er hjól.">
+
+            <p>Spilabúðin selur spil, heldur viðburði og býður upp á skemmtilega stund. Kíktu á okkur á Spilagötu 1.</p>
+          </div>
+
+          <div class="cards">
+            <div class="content">
+              <section class="card">
+                <div class="content">
+                  <h3 class="title">Spil</h3>
+                  <div class="text">
+                    <p>Við seljum allskonar spil fyrir allskonar fólk.</p>
+                  </div>
+                  <div class="actions">
+                    <a href="./sidur/spil.html" class="button">Skoða spil</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="card">
+                <div class="content">
+                  <h3 class="title">Viðburðir</h3>
+                  <div class="text">
+                    <p>Við höldum reglulega viðburði.</p>
+                  </div>
+                  <div class="actions">
+                    <a class="button" href="./sidur/vidburdir.html">Skoðaðu viðburði</a> <a class="button"
+                      href="./sidur/skraning.html">Skráðu mig á viðburð</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="cards">
+            <h2 class="title">Vinsælustu spilin</h2>
+            <div class="content">
+              <section class="card">
+                <div class="image"><img src="./myndir/brass.jpg" alt="Mynd af boxi spilsins Brass: Birmingham"></div>
+                <div class="content">
+                  <h3 class="title">Brass: Birmingham</h3>
+                  <div class="text">
+                    <p>Ný komið aftur! Klassískt spil sem fær 8,41 í einkunn hjá BoardGameGeek.
+                    </p>
+                  </div>
+                  <div class="actions">
+                    <a href="./sidur/spil.html" class="button">Skoða spil</a>
+
+                    <!-- Rétt leið til að útbúa form, þó ekkert virki... -->
+                    <form method="post" action=".">
+                      <input type="hidden" name="id" value="1">
+                      <button class="button">Setja í körfu</button>
+                    </form>
+                  </div>
+                </div>
+
+              </section>
+
+              <section class="card">
+                <div class="image"><img class="image" src="./myndir/pandemic.jpg"
+                    alt="Mynd af boxi spilsins Pandemic Legacy"></div>
+                <div class="content">
+                  <h3 class="title">Pandemic Legacy</h3>
+                  <div class="text">
+                    <p>Getið þið unnið saman til að stöðva heimsfaraldur? Spil sem fær 8,37 í einkunn hjá BoardGameGeek.
+                    </p>
+                  </div>
+                  <div class="actions">
+                    <a href="./sidur/spil.html" class="button">Skoða spil</a>
+
+                    <form method="post" action=".">
+                      <input type="hidden" name="id" value="1">
+                      <button class="button">Setja í körfu</button>
+                    </form>
+                  </div>
+                </div>
+
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <section>
+        <h2>Opnunartími</h2>
+        <dl>
+          <dt>Mánudagar</dt>
+          <dd>Lokað</dd>
+          <dt>Þriðjudagar til fimmtudags</dt>
+          <dd>14:00–22:00</dd>
+          <dt>Föstudaga</dt>
+          <dd>14:00–00:00</dd>
+          <dt>Laugardaga</dt>
+          <dd>12:00–00:00</dd>
+          <dt>Sunnudaga</dt>
+          <dd>12:00–22:00</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Hér erum við</h2>
+        <ul>
+          <li>Spilabúðin ehf.</li>
+          <li>Spilagata 1 10</li>
+          <li>101 Reykjavík</li>
+          <li><a href="tel:1234567">Sími 123-4567</a></li>
+          <li>
+            <a href="mailto:spilabudin@example.org">spilabudin@example.org</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Samfélagsmiðlar</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/HaskoliIslands/">Facebook</a></li>
+          <li><a href="https://www.youtube.com/user/HIvarp">YouTube</a></li>
+          <li><a href="https://www.instagram.com/haskoli_islands/">Instagram</a></li>
+        </ul>
+      </section>
+    </footer>
+  </div>
+
+</body>
+
+</html>

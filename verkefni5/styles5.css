@@ -1,0 +1,315 @@
+/* Setjum inn „reset“ sem fjarlægir margin og padding af öllu */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reiknum stærð á öllum boxum sem border-box */
+html {
+  box-sizing: border-box;
+}
+/* og látum erfast á allt */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* hjálpar class sem felur sjónrænt en skjálesarar lesa */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Stillingar */
+
+:root {
+  --font-size-base: 16px;
+  --font-size-headings: 1.5rem;
+
+  /* Grunn bilið okkar er 1rem == 16px */
+  --spacing: 1rem;
+
+  /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
+  --vertical-space: calc(var(--gutter) * 1);
+  --vertical-space-large: calc(var(--gutter) * 1.5);
+
+  /* Hámarks og lágmarks breidd á efni */
+  --max-width: 1200px;
+  --min-width-image: 200px;
+  --max-width-image: 300px;
+  --max-width-footer-section: 250px;
+
+  /* Border breiddir */
+  --border-width: 1px;
+  --border-radius-regular: 5px;
+  --border-radius-image: 10px;
+
+  /* Grid stillingar */
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+
+  /* Breidd á efni með offset */
+  --width-offset: calc(100% - (2 * var(--offset)));
+
+  /* Litir */
+  /** Litir með nafni **/
+  --color-yellow: #f3dd99;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-purple: #eebbdd;
+  --color-purple-dark: #cc99bb;
+
+  /** Litir með notkun **/
+  --color-background-primary: var(--color-yellow);
+  --color-background-secondary: var(--color-purple);
+  --color-background-form: var(--color-white);
+  --color-border-with-background: var(--color-purple-dark);
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: 'Open Sans', Arial, Helvetica, sans-serif;
+  --font-family-heading: 'Matemasie-Regular', 'Comic Sans MS', cursive;
+
+  /* Transitions */
+  --transition-time-short: 300ms;
+  --transition-time-long: 600ms;
+  --transition-timing-function: ease-in-out;
+}
+
+/* Almennt */
+
+/** Letur og stærðir **/
+
+/*** Grunnstærð er 16px ***/
+html {
+  font-size: var(--font-size-base);
+}
+
+/*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/*** Allt meginmál notar open sans ***/
+html,
+input,
+select,
+button {
+  font-family: var(--font-family-base);
+}
+
+/*** Allar fyrirsagnir nota Matemasie regular ***/
+h1,
+h2,
+h3,
+legend {
+  font-family: var(--font-family-heading);
+}
+
+/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
+img {
+  max-width: 100%;
+}
+
+/** Litur á hlekkjum erfist frá foreldri **/
+a {
+  color: inherit;
+}
+
+/** „Til baka á forsíðu“ hlekkur **/
+.back {
+  margin-top: var(--spacing);
+}
+
+/** Almennt takka útlit, getur virkað á bæði <a> og <button> **/
+
+/* TODO útfæra og pæla í kommenti að ofan... hvaða semantík meikar sens hér? */
+
+/* Fade in animation */
+
+/* Til að transition sé ekki frá hvítum */
+html {
+  background-color: var(--color-background-primary);
+}
+
+/**
+ * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
+ * Við förum yfir flexbox í viku 4 en þangað til er hægt að nota þetta
+ * sem grunn og án breytinga.
+ * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
+ * innan <body>.
+ */
+ .wrapper {
+  /* Notum grid hér til að setja upp bil á milli header, meginmáls og fóts */
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+
+  /* grid items eru miðjuð */
+  justify-items: center;
+
+  gap: var(--vertical-space);
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+}
+
+/* TODO hér væri gott að búa til auka wrapper fyrir allt efni (ekki header eða footer)
+og síðan wrapper fyrir nav og main til að stýra hvernig þau element taka pláss */
+
+/** Haus á síðum **/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/** Valmynd **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast töluvert ef
+.wrapper er notað eins og stungið upp á að ofan */
+
+/** Meginmál og efni forsíðu **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast */
+
+/**
+ * notum þetta til að fá bil á milli eininga _almennt_
+ * en ekki að hver eining þurfi að huga að bili
+ */
+main > .content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+/*** Inngangsefni á forsíðu ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn, hér þarf að aðlaga,
+hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
+
+/** Cards **/
+
+.cards {
+  display: grid;
+  grid-template-rows: auto;
+  gap: var(--vertical-space);
+  justify-items: center;
+
+  width: 100%;
+}
+
+.cards > .title {
+  width: 100%;
+  text-align: center;
+}
+
+.cards > .content {
+  display: grid;
+  grid-template-rows: auto;
+  gap: var(--vertical-space);
+  justify-items: center;
+
+  width: 100%;
+}
+
+/* TODO skilgreinda brotpunkt fyrir .cards .content */
+@media (min-width: 99999px) {
+  /* TODO hvaða stílar ættu að vera hér? */
+}
+
+
+/** Card **/
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  /* hér verðum við að reikna út breidd svo að flex-wrap virki */
+  width: calc(50% - var(--spacing));
+}
+
+/* TODO skilgreinda brotpunkt fyrir .card */
+@media (min-width: 99999px) {
+  /* TODO hvaða stílar ættu að vera hér? */
+}
+
+.card > .image {
+  width: 100%;
+}
+
+.card > .image img {
+  display: block;
+
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.card > .content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+
+  padding: calc(var(--spacing) / 2);
+  border: var(--border-regular);
+  border-top: 0;
+  border-bottom-left-radius: var(--border-radius-regular);
+  border-bottom-right-radius: var(--border-radius-regular);
+}
+
+/**
+ * notum nýja selectora! brotið niður
+ * .card            <- veljum öll .card
+ * :not(            <- nema, við viljum ef _ekki_...
+ *   :has(> .image) <- .image sem strangt barn .card
+ * )                <- endir á :not()
+ * > .content       <- sem er strax barn af .card
+ * Þ.e.a.s. fyrir .card sem hefur ekki .image, setja border + radíus á allt .content
+ */
+.card:not(:has(> .image)) > .content {
+  border: var(--border-regular);
+  border-radius: var(--border-radius-regular);
+}
+
+.card > .content > .text {
+  flex: 1;
+}
+
+.card > .content > .actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing);
+
+  margin-top: var(--spacing);
+}
+
+/** Fótur **/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/*** Opnunartími ***/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/** Spilasíða, töflustílar **/
+
+/* TODO nota úr sýnilausn eða þinni lausn */
+
+/** Viðburðir **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
+
+/** Skráningarform **/
+
+/* TODO nota úr sýnilausn eða þinni lausn, ætti að einfaldast með því að endurnýta .cards og .card */
