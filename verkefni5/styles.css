@@ -167,19 +167,11 @@ a {
   color: var(--color-white);
 }
 
-/**
- * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
- * Við förum yfir flexbox í viku 4 en þangað til er hægt að nota þetta
- * sem grunn og án breytinga.
- * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
- * innan <body>.
- */
 .wrapper {
   /* Notum grid hér til að setja upp bil á milli header, meginmáls og fóts */
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 100%;
-
   /* grid items eru miðjuð */
   justify-items: center;
 
@@ -188,6 +180,7 @@ a {
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-background-primary);
+
 }
 
 .wrapper .wrapper-content {
@@ -205,12 +198,45 @@ a {
 .wrapper .wrapper-nav {
   flex: 1;
 }
-
 .wrapper .wrapper-main {
   flex: 4;
 }
 
 /* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
+
+/* Nav og footer reddy fyrir allt undir 750px/320px */
+@media (max-width: 750px) {
+  .wrapper-content {
+    flex-direction: column;
+  }
+
+  nav ul{
+    list-style: none;
+    text-align: center;
+  }
+  nav ul li{
+    display: inline-block;
+    margin-right: 1rem;
+  }
+    
+}
+
+@media (min-width: 320px) {
+  .intro {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    
+  }
+  
+  .intro img {
+    order: 1;
+  
+    max-width: var(--max-width-image);
+    border-radius: var(--border-radius-image);
+  }
+
+}
 
 /** Haus á síðum **/
 
@@ -219,15 +245,13 @@ header {
   width: 100%;
 
   background-color: var(--color-background-secondary);
-  border-bottom: var(--border-with-background);
+
+  border-bottom: 4px solid var(--color-border-with-background);
   text-align: center;
 }
 
 /** Valmynd **/
 
-nav {
-  background-color: yellow;
-}
 
 nav ul {
   list-style: none;
@@ -255,19 +279,6 @@ main > .content {
 }
 
 /*** Inngangsefni á forsíðu ***/
-
-.intro {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing);
-}
-
-.intro img {
-  order: 1;
-
-  max-width: var(--max-width-image);
-  border-radius: var(--border-radius-image);
-}
 
 /** Cards **/
 
@@ -309,7 +320,11 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 }
 
 /* TODO skilgreinda brotpunkt fyrir .cards .content */
-@media (min-width: 99999px) {
+/*stærri en 320px*/
+@media (min-width: 320px) {
+  /* card innan .cards raðast úr row í column */
+
+  
   /* TODO hvaða stílar ættu að vera hér? */
 }
 
@@ -393,8 +408,9 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: var(--spacing);
+  flex-wrap: wrap;
 
   padding-top: var(--spacing);
   border-top: 4px solid var(--color-border-with-background);
@@ -402,6 +418,8 @@ footer {
 
   background-color: var(--color-background-secondary);
   text-align: center;
+
+  padding-bottom: 1rem; 
 }
 
 footer > section {
@@ -540,4 +558,5 @@ fieldset input[type='checkbox'] {
 }
 
   
+	
 
