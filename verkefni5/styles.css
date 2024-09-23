@@ -182,7 +182,7 @@ a {
   background-color: var(--color-background-primary);
 
 }
-
+/*
 .wrapper .wrapper-content {
   flex: 1;
 
@@ -194,41 +194,79 @@ a {
   width: 100%;
   max-width: var(--max-width);
 }
-
+/*
 .wrapper .wrapper-nav {
   flex: 1;
 }
 .wrapper .wrapper-main {
   flex: 4;
+
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  margin-bottom: calc(var(--spacing) / 2);
+  text-align: left;
+}
+  */
+
+/**/
+.wrapper-content {
+  flex-direction: column;
 }
 
+nav ul{
+  list-style: none;
+  text-align: center;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 1rem;
+}
 /* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
 
-/* Nav og footer reddy fyrir allt undir 750px/320px */
-@media (max-width: 750px) {
-  .wrapper-content {
-    flex-direction: column;
+@media (min-width: 700px) { 
+/* nav færist til vinstri þegar við fáum amk 700px breiðan glugga*/
+  .wrapper .wrapper-content {
+    flex: 1;
+  
+    display: flex;
+    gap: var(--spacing);
+  
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    width: 100%;
+    max-width: var(--max-width);
+    flex-direction: row;
+  }
+  .wrapper .wrapper-nav {
+    flex: 2;
+  }
+  .wrapper .wrapper-main {
+    flex: 10;
+  
+  } 
+  nav ul {
+    list-style: none;
+  }
+  nav ul li {
+    margin-bottom: calc(var(--spacing) / 2);
+    text-align: left;
+    display: block;
   }
 
-  nav ul{
-    list-style: none;
-    text-align: center;
-  }
-  nav ul li{
-    display: inline-block;
-    margin-right: 1rem;
-  }
-    
+  
 }
 
-@media (min-width: 320px) {
+@media (min-width: 700px) {
+  /*intro fer úr col í row þegar við fáum amk 700px breiðan glugga */
   .intro {
     display: flex;
     justify-content: center;
     gap: var(--spacing);
     
   }
-  
   .intro img {
     order: 1;
   
@@ -250,17 +288,6 @@ header {
   text-align: center;
 }
 
-/** Valmynd **/
-
-
-nav ul {
-  list-style: none;
-}
-
-nav ul li {
-  margin-bottom: calc(var(--spacing) / 2);
-  text-align: left;
-}
 
 /** Meginmál og efni forsíðu **/
 
@@ -317,6 +344,10 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   justify-items: center;
 
   width: 100%;
+
+  /**/
+  grid-template-columns: repeat(12, 1fr);
+
 }
 
 /* TODO skilgreinda brotpunkt fyrir .cards .content */
@@ -332,21 +363,50 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 /** Card **/
 
 .card {
+  
   display: flex;
   flex-direction: column;
 
   /* hér verðum við að reikna út breidd svo að flex-wrap virki */
-  width: calc(50% - var(--spacing));
+
+  /*width: calc(50% - var(--spacing));*/
 
   border: var(--border-width) solid var(--color-black);
   border-radius: var(--border-radius-regular);
+  
+
+  /*éh*/
+
+  grid-column: span 12;
+  width: 100%;
 
 
 }
 
 /* TODO skilgreinda brotpunkt fyrir .card */
-@media (min-width: 99999px) {
+@media (min-width: 500px) {
   /* TODO hvaða stílar ættu að vera hér? */
+
+  /* card raðast úr 1 í 2 þegar við fáum amk 500px breiðan glugga */
+
+  .card { 
+    grid-column: span 6;
+  }
+
+  /*intro fer úr col í row þegar við fáum amk 500px breiðan glugga */
+  .intro {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    
+  }
+  .intro img {
+    order: 1;
+  
+    max-width: var(--max-width-image);
+    border-radius: var(--border-radius-image);
+  }
+  
 }
 
 .card > .image {
