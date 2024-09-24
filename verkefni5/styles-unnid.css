@@ -370,10 +370,6 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   /* hér verðum við að reikna út breidd svo að flex-wrap virki */
 
   /*width: calc(50% - var(--spacing));*/
-
-
-  
-
   /*éh*/
 
   grid-column: span 12;
@@ -384,7 +380,6 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 
 /* TODO skilgreinda brotpunkt fyrir .card */
 @media (min-width: 500px) {
-  /* TODO hvaða stílar ættu að vera hér? */
 
   /* card raðast úr 1 í 2 þegar við fáum amk 500px breiðan glugga */
 
@@ -395,7 +390,7 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
   /*intro fer úr col í row þegar við fáum amk 500px breiðan glugga */
   .intro {
     display: flex;
-    justify-content: center;
+    
     gap: var(--spacing);
     
   }
@@ -473,7 +468,7 @@ hugsanlega setja nýjan flex container utan um bæði þetta og .cards */
 
 footer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: var(--spacing);
   flex-wrap: wrap;
 
